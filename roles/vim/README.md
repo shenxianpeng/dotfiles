@@ -1,11 +1,11 @@
 vim
 ===
 
-Installs vim, [vim-plug](https://github.com/junegunn/vim-plug), and symlinks [.vimrc](https://github.com/sloria/dotfiles/blob/master/roles/vim/files/vimrc).
+Installs vim, [vim-plug](https://github.com/junegunn/vim-plug), and symlinks [.vimrc](https://github.com/shenxianpeng/dotfiles/blob/master/roles/vim/files/vimrc).
 
 ## Want to install without using ansible?
 
-See: https://github.com/sloria/dotfiles#what-if-i-only-want-your-vim
+See: https://github.com/shenxianpeng/dotfiles#what-if-i-only-want-your-vim
 
 ## Some useful bindings
 

@@ -163,7 +163,7 @@ map <leader>\ :Tagbar<CR>
 let g:tagbar_autofocus = 1
 " COLOR
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'sloria/vim-hybrid'  " hybrid with easier-to-read line numbers
+Plug 'shenxianpeng/vim-hybrid'  " hybrid with easier-to-read line numbers
 
 " LANGUAGE-SPECIFIC
 Plug 'sheerun/vim-polyglot'  " syntax files for most languages
