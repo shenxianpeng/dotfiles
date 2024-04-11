@@ -1,0 +1,2 @@
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+export PYTHONBREAKPOINT=ipdb.set_trace
