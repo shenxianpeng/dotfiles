@@ -1,6 +1,6 @@
 # dotfiles
 
-[shenxianpeng's dotfiles](https://github.com/shenxianpeng/dotfiles) was writen as Ansible roles. 
+[shenxianpeng's dotfiles](https://github.com/shenxianpeng/dotfiles) was written as Ansible roles.
 
 Sets up a full local development environment with a **single command.**
 
@@ -178,4 +178,4 @@ dot-update pipx
 [homebrew-cask]: https://github.com/caskroom/homebrew-cask
 [mas]: https://github.com/mas-cli/mas
 
-## 
+##
