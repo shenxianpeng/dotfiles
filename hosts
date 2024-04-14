@@ -3,3 +3,6 @@ localhost
 
 [local:vars]
 ansible_connection=local
+ansible_user=sxp
+ansible_pass=123456
+ansible_become_pass=123456
