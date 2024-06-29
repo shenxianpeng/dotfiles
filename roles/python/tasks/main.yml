@@ -1,8 +1,3 @@
-
-- import_tasks: mac.yml
-  when: ansible_os_family == "Darwin"
-
-
 - name: Install Python versions with pyenv
   shell: 'pyenv install {{item}} --skip-existing'
   args:
@@ -31,15 +26,3 @@
     src: "{{dotfiles_home}}/roles/python/files/pytest.ini"
     dest: "{{dotfiles_user_home}}/pytest.ini"
     state: link
-
-- name: Install pipx
-  tags: pipx
-  homebrew: name=pipx state=present
-  when: ansible_os_family == "Darwin"
-
-# A global `virtualenv` command is needed for prezto's pyenv-virtualenv to work
-- name: Install virtualenv
-  shell: "PYENV_VERSION=system python3 -m pip install virtualenv"
-  args:
-    creates: "/usr/local/bin/virtualenv"
-  when: ansible_os_family == "Darwin"

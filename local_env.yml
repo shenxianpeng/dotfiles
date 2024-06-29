@@ -19,4 +19,3 @@
     - {role: kubernetes, tags: ['kubernetes']}
     - {role: k9s, tags: ['k9s']}
     - {role: jrnl, tags: ['jrnl']}
-    - {role: macos, tags: ['macos'], when: ansible_os_family == "Darwin"}

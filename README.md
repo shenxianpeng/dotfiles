@@ -37,7 +37,7 @@ cd ~/dotfiles
 ```
 
 - Update the following variables in `group_vars/local` (at a minimum)
-  - `full_name`: Your name, which will be attached to commit messages, e.g. "Steven Loria"
+  - `full_name`: Your name, which will be attached to commit messages, e.g. "Xianpeng Shen"
   - `git_user`: Your Github username.
   - `git_email`: Your git email address.
 - Optional, but recommended: Update `group_vars/local` with the programs you want installed by [homebrew][], [homebrew-cask][], and npm.
