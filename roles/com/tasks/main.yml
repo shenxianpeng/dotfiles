@@ -1,0 +1,5 @@
+- name: Install common packages
+  apt: 
+    name: ['curl'] # add more package bease on your requirment
+    state: present
+  become: true

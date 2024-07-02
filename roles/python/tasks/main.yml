@@ -1,3 +1,8 @@
+- name: Install pyenv
+  shell: curl https://pyenv.run | bash
+  register: pyenv_stat
+  tags: pyenv
+
 - name: Install Python versions with pyenv
   shell: 'pyenv install {{item}} --skip-existing'
   args:
