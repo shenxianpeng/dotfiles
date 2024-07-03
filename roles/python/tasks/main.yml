@@ -1,5 +1,5 @@
 - name: Install pyenv
-  shell: curl https://pyenv.run | bash
+  shell: curl https://pyenv.run | bash | true
   register: pyenv_stat
   tags: pyenv
 

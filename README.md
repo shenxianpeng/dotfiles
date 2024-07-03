@@ -32,7 +32,7 @@ It was forked from [sloria/dotfiles](https://github.com/sloria/dotfiles).
 ```bash
 # Replace git url with your fork
 # NOTE: It is important that you clone to ~/dotfiles
-git clone https://github.com/YOU/dotfiles.git ~/dotfiles
+git clone https://github.com/YOUR/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ```
 
@@ -170,12 +170,3 @@ mv ~/.local/pipx ~/.local/pipx.bak
 dot-update pipx
 ```
 
-## Todo
-
-- Full Debian and Red Hat support
-
-[homebrew]: http://brew.sh/
-[homebrew-cask]: https://github.com/caskroom/homebrew-cask
-[mas]: https://github.com/mas-cli/mas
-
-##
