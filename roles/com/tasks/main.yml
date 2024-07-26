@@ -1,14 +1,19 @@
 # add more package bease on your requirment
 # gcc, make are used by pyenv to compile python code.  
 - name: Install common packages
-  apt: 
-    name: ['curl', 'direnv', 'gcc', 'make']
+  apt:
+    name:
+      - curl
+      - direnv
+      - gcc
+      - make
     state: present
   become: true
+  when: ansible_os_family == "Debian"
 
-- name: Install deps for python build
+- name: Install dependencies for Python build
   apt:
-    name: 
+    name:
       - build-essential
       - zlib1g-dev
       - libncurses5-dev
@@ -20,6 +25,7 @@
       - libsqlite3-dev
     state: present
   become: true
-  tags:
+  tags: 
     - python
   when: ansible_os_family == "Debian"
+

@@ -1,7 +1,10 @@
-- name: Install fzf with Homebrew
-  homebrew: name=fzf state=present
-  when: ansible_os_family == "Darwin"
-
-- name: Install fzf with APT
-  apt: name=fzf state=present
-  when: ansible_os_familly == "Debian"
+- name: Install fzf
+  apt:
+    name: fzf
+    state: present
+  become: true
+  when:
+    - ansible_os_family == "Debian"
+    - ansible_distribution in ["Debian", "Ubuntu"]  # Ensures APT is used on Debian-based systems
+  tags:
+    - fzf

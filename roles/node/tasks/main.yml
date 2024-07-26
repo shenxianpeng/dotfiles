@@ -1,4 +1,0 @@
-- name: Install nvm
-  script: install_nvm.sh
-  args:
-    creates: "{{dotfiles_user_home}}/.nvm"
