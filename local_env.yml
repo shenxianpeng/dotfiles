@@ -3,6 +3,7 @@
   roles:
     # Tag each role so that we can select individual roles to run with ansible-playbook --tags
     - {role: com}
+    - {role: devbox}
     - {role: git, tags: ['git']}
     - {role: package_manager, tags: ['package_manager', 'bootstrap']}
     - {role: zsh, tags: ['zsh', 'bootstrap']}

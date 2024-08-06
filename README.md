@@ -63,15 +63,6 @@ line in `~/.localrc`.
 ./bin/dot-bootstrap
 ```
 
-## Authenticating with github
-
-You won't be able to push to repos until you authenticate with GitHub.
-You can use `gh` for this, which should have been installed by `dot-bootstrap` above.
-
-```
-gh auth login
-```
-
 ## Updating your local environment
 
 Once you have the dotfiles installed you can run the following command to rerun the ansible playbook:
@@ -92,6 +83,7 @@ There are three main commands in the `bin` directory for setting up and updating
 
 - `dot-bootstrap`: sets up local environment by executing all roles in `local_env.yml`.
 - `dot-update`: updates local environment by executing all roles in `local_env.yml` except for the ones tagged with "bootstrap".
+- `devbox init`: Initialize Devbox
 
 ## Special files
 
@@ -105,68 +97,3 @@ All configuration is done in `~/dotfiles`. Each role may contain (in addition to
 **vscode**
 
 Use built-in Settings Sync to sync VSCode settings.
-
-**macOS keyboard settings**
-
-There are a few keyboard customizations that must be done manually:
-
-- Turning repeat speed up to 11.
-
-![Keyboard settings](https://user-images.githubusercontent.com/2379650/34223505-91f95072-e58d-11e7-9b36-78aec4203b0d.png "Key repeat settings")
-
-- Mapping Caps Lock to Ctrl.
-
-![Modifier keys](https://user-images.githubusercontent.com/2379650/34223523-a2c8e4e4-e58d-11e7-9532-d74b95d8408a.png)
-
-**login message**
-
-You can add a message to the login screen using the following command:
-
-```
-sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "This laptop is connected to an iCloud account and is valueless if lost. Contact (123) 456-7890 if found. Reward included."
-```
-
-## What if I only want your vim?
-
-First make sure you have a sane vim compiled. On macOS, the following will do:
-
-```
-brew install macvim
-```
-
-The following commands will install vim-plug and download my `.vimrc`.
-
-After backing up your `~/.vim` directory and `~/.vimrc`:
-
-```
-mkdir -p ~/.vim/autoload
-curl -fLo ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-curl -fLo ~/.vimrc https://raw.githubusercontent.com/shenxianpeng/dotfiles/master/roles/vim/files/vimrc
-```
-
-You will now be able to open vim and run `:PlugInstall` to install all plugins.
-
-## Troubleshooting
-
-If you get an error about Xcode command-line tools, you may need to run
-
-```
-sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
-```
-
-If pyenv versions fail to install, try the steps here:
-
-https://github.com/pyenv/pyenv/issues/1219#issuecomment-459333831
-
-If python environments break after upgrading brew-installed python, rehash pyenv and re-install pipx environments
-
-```
-pyenv rehash
-
-
-mv ~/.local/bin ~/.local/bin.bak
-mv ~/.local/pipx ~/.local/pipx.bak
-
-dot-update pipx
-```
-
