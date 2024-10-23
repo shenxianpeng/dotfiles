@@ -1,0 +1,25 @@
+name: main
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+env:
+  GITHUB_ACTIONS: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run Ansible Playbook
+        run: |
+          python3 -m venv venv
+          source venv/bin/activate
+          pip install ansible
+          ./bin/dot-bootstrap

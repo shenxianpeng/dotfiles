@@ -2,7 +2,13 @@
 set -e
 
 echo "Setting up local dev environment..."
-ansible-playbook -i ~/dotfiles/hosts ~/dotfiles/local_env.yml --ask-become-pass
+# check if this is run in github action
+if [ -n "$GITHUB_ACTIONS" ]; then
+  ansible-playbook -i hosts local_env.yml
+else
+  ansible-playbook -i hosts local_env.yml --ask-become-pass
+fi
+
 
 # If terminal-notifier is installed, use it to display a notification
 if command -v terminal-notifier 1>/dev/null 2>&1; then
