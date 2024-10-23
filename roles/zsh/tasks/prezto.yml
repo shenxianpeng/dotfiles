@@ -5,12 +5,12 @@
 
 - name: Link zpreztorc file
   file:
-    src: "{{ dotfiles_home }}/roles/zsh/files/zpreztorc.link"
+    src: "zpreztorc.link"
     dest: "{{ '~/.zpreztorc' | expanduser }}"
     state: link
 
 - name: Link zshrc file
   file:
-    src: "{{ dotfiles_home }}/roles/zsh/files/zshrc.link"
+    src: "zshrc.link"
     dest: "{{ '~/.zshrc' | expanduser }}"
     state: link
