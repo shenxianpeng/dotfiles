@@ -6,6 +6,13 @@
 - import_tasks: redhat.yml
   when: ansible_os_family == "RedHat"
 
-- name: source aliases.zsh
-  copy: src=aliases.zsh dest={{dotfiles_user_home}}/.zshrc
-  when: not exists({{dotfiles_user_home}}/.zshrc)
+- name: Check if .zshrc exists
+  stat:
+    path: "{{ dotfiles_user_home }}/.zshrc"
+  register: zshrc_exists
+
+- name: Copy aliases.zsh if .zshrc does not exist
+  copy:
+    src: aliases.zsh
+    dest: "{{ dotfiles_user_home }}/.zshrc"
+  when: not zshrc_exists.stat.exists
