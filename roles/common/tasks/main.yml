@@ -1,4 +1,4 @@
-# add more package bease on your requirment
+# add more package base on your requirement
 # gcc, make are used by pyenv to compile python code.  
 - name: Install common packages
   apt:
@@ -29,3 +29,6 @@
     - python
   when: ansible_os_family == "Debian"
 
+- name: Install Homebrew for Linux
+  shell: echo '\n' | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  when: ansible_os_family in ['Debian', 'RedHat']

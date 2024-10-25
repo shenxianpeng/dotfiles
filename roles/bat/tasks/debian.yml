@@ -9,7 +9,7 @@
 - name: Install bat with a .deb file
   apt:
     deb: "{{ bat_release_url }}/{{ bat_release_version }}/{{ bat_dpkg_file }}"
-  become: yes
+  become: true
   become_user: root
   when: bat_check_deb.rc == 1
 
@@ -24,6 +24,6 @@
 - name: Update bat
   apt:
     deb: "{{ bat_release_url }}/{{ bat_release_version }}/{{ bat_dpkg_file }}"
-  become: yes
+  become: true
   become_user: root
   when: bat_ver != bat_installed_ver

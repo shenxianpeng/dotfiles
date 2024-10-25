@@ -4,12 +4,8 @@
 
 Sets up a full local development environment with a **single command.**
 
-It was forked from [sloria/dotfiles](https://github.com/sloria/dotfiles).
+## A few features
 
-## A few neat features
-
-- zsh configured with [prezto](https://github.com/sorin-ionescu/prezto).
-- nice fonts for the terminal and coding.
 - python3, pipx (for managing python CLIs), pyenv (for managing Python versions), and pyenv-virtualenv (for managing virtualenvs)
 - a tmux.conf that's pretty neat.
 - vim with [vim-plug](https://github.com/junegunn/vim-plug) for plugin management. All configuration in a single file [.vimrc](https://github.com/shenxianpeng/dotfiles/blob/master/roles/vim/files/vimrc).
@@ -97,3 +93,5 @@ All configuration is done in `~/dotfiles`. Each role may contain (in addition to
 **vscode**
 
 Use built-in Settings Sync to sync VSCode settings.
+
+It was forked from [sloria/dotfiles](https://github.com/sloria/dotfiles).

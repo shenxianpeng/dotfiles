@@ -2,7 +2,7 @@
 
 - name: Install Devbox
   command: curl -fsSL https://get.jetify.com/devbox | bash
-  become: yes
+  become: true
   when: 
     - ansible_os_family == 'RedHat'
     - ansible_os_family == 'Debian' 
